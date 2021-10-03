@@ -14,19 +14,25 @@ export default function ThankYouPage() {
           margin-top: 3%;
         `}
       >
-        <span
+        <div
           css={css`
             font-size: 8vh;
+            padding-top: 14vh;
             /* margin-top: 201px; */
           `}
         >
           The Legion appreciates your support, plebeian.
-        </span>
-        <span>
+        </div>
+        <div
+          css={css`
+            margin-top: 30vh;
+            font-size: 4vh;
+          `}
+        >
           <Link href="/">
             <a> Return to the landing page of the Ferrarrius Evocatorum </a>
           </Link>
-        </span>
+        </div>
       </div>
     </Layout>
   );
