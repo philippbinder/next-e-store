@@ -13,6 +13,9 @@ const priceScutum = 1000;
 const pricePilum = 100;
 const priceTotal = pricePilum + priceScutum;
 console.log(priceTotal);
+// function LinkToCheckout() {
+//   <Link href="/checkout" />;
+// }
 
 export default function CartPage() {
   return (
@@ -76,13 +79,32 @@ export default function CartPage() {
               flex-grow: 1;
               width: 70%;
               border: 3px solid black;
+              /* text-align: center; */
             `}
           >
             <span> Total price: {priceTotal} </span>
           </div>
+          <div
+            css={css`
+              text-align: center;
+              border-top: 4px solid black;
+              flex-grow: 1;
+              width: 100%;
+              background-color: darkred;
+            `}
+          >
+            <span>
+              {' '}
+              <Link href="/checkout">
+                <a> Buy </a>
+              </Link>
+            </span>
+          </div>
         </div>
       </div>
-      <button onClick={ToCheckout}> Buy </button>
+
+      {/* <button onClick={() => LinkToCheckout()}> Buy </button> */}
+      {/* <button onClick={(e) => handleClick(e, "/about")}> Buy </button> */}
     </Layout>
   );
 }
@@ -91,4 +113,5 @@ export default function CartPage() {
 To do
 - make images fit and not leave div container
 - move vairables inside the relevant scope. How do I make it work inside JSX?
+- make a button with onClick that takes the user to the checkout page
 */

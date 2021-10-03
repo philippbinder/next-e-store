@@ -12,7 +12,6 @@ export default function ProdcutsPage() {
           `}
         >
           <h1> Hottest Iron from the Legion! </h1>
-          <p> The Legion appreciates your support, plebeian.</p>
           <h2
             css={css`
               font-size: 4vh;
