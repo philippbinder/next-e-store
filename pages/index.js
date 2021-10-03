@@ -14,14 +14,22 @@ export default function Home() {
     // >
     <>
       <Layout>
-        <h1> Landing Page </h1>
+        <h1
+          css={css`
+            text-align: center;
+          `}
+        >
+          {' '}
+          Welcome to the landing page of the Ferrarius Evocatorum.
+        </h1>
         <div
           css={css`
             background-image: url('https://www.akg-images.co.uk/Docs/AKG/Media/TR3_WATERMARKED/c/d/f/b/AKG297741.jpg');
             height: 50vh;
             width: 50vw;
-            background-repeat: no-repeat;
+            /* background-repeat: no-repeat; */
             background-size: 100% 100%;
+            border: solid darkred;
             margin-left: 25vw;
             margin-right: 30vw;
             /* WHY is the margin left and right STILL different? I uses 20 PERCENTAGE or the same VW. */
@@ -34,11 +42,13 @@ export default function Home() {
               text-align: center;
               /* line-height: normal; */
               color: white;
+              opacity: 0.75;
               font-size: 7vh;
-              padding-top: 18%;
+              padding-top: 15%;
             `}
           >
-            Work in progress.
+            Work in progress. <br />
+            Opus in progressu.
           </div>
         </div>
       </Layout>

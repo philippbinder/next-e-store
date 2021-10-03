@@ -6,6 +6,7 @@ const navStyles = css`
   /* gap: 5px; */
   background-color: darkred;
   color: silver;
+  /* border: 2px solid black; */
 `;
 
 export default function Header() {
