@@ -14,14 +14,13 @@ export default function ProdcutsPage() {
     <div>
       <Layout>
         <h1
-        // css={css`
-        //   text-align: center;
-        // `}
+          css={css`
+            text-align: center;
+          `}
         >
           {' '}
           Hottest Iron from the Legion!{' '}
         </h1>
-        <p> The Legion appreciates your support, plebeian.</p>
         <div
           css={css`
             display: grid;

@@ -20,7 +20,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="./products">
+            <Link href="/products">
               <a> Products </a>
             </Link>
           </li>

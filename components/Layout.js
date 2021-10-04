@@ -10,3 +10,4 @@ export default function Layout(props) {
     </div>
   );
 }
+// Alles was auf anderen Seiten innerhalb von <Layout> </Layout> gepassed wird, wird props.children
