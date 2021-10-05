@@ -15,6 +15,9 @@ https://github.com/upleveled/next-js-example-sep-2021/blob/master/README.md
 */
 
 import fs from 'node:fs';
+import postgres from 'postgres';
+
+const sql = postgres();
 
 console.log('filesystem', fs);
 // obere Zeilen mit fs enkommentieren wenn ich weiterarbeiten möchte
@@ -25,6 +28,33 @@ Database name: e_commerce_db
 User name is the same
 Password is the same
 */
+
+// Create new item in table
+// INSERT INTO arsenal
+//   (id, name)
+// VALUES
+//   (1, 'Gladius');
+
+// Retrieve all details from all items
+// SELECT * FROM arsenal;
+
+// Modify table with NOT NULL
+// 1.
+// Modify table without NOT NULL (could stop at this point if I don't need the NOT NULL contraint)
+// ALTER TABLE arsenal
+// ADD COLUMN item_type VARCHAR;
+// 2.
+// => update values, siehe unten
+// 3.
+// Set NOT NULL contraint
+// ALTER TABLE arsenal
+// ALTER COLUMN item_type SET NOT NULL;
+
+// Modify User name with id matching 1
+// UPDATE arsenal
+// SET item_type = 'Shield'
+// WHERE id = 2;
+
 export const arsenal = [
   { id: '1', name: 'Gladius' },
   { id: '2', name: 'Scutum' },
