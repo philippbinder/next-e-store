@@ -15,8 +15,15 @@ https://github.com/upleveled/next-js-example-sep-2021/blob/master/README.md
 */
 
 import fs from 'node:fs';
+import dotenvSafe from 'dotenv-safe';
 import postgres from 'postgres';
 
+// Read in the environment variables
+// in the .env file, making it possible
+// to connect to PostgreSQL
+dotenvSafe.config(); // needs to be before postgres
+
+// Connect to PostgreSQL
 const sql = postgres();
 
 console.log('filesystem', fs);
@@ -55,6 +62,9 @@ Password is the same
 // SET item_type = 'Shield'
 // WHERE id = 2;
 
+// yarn add dotenv-safe and make a new file .env and .env.example. The 2nd one will be commited to github, the 1st one not. Sinn des Ganzen? To connect to database as user of the web page?
+// add .env to gitignore under # local env files!!!
+// same link at 1:08:30
 export const arsenal = [
   { id: '1', name: 'Gladius' },
   { id: '2', name: 'Scutum' },
