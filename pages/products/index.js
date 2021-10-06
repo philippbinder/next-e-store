@@ -4,7 +4,7 @@ import Layout from '../../components/Layout';
 
 // import { arsenal } from '../../util/database'; cant be imported from here because node.js wont work in the frontend => GetServerSideProps https://www.youtube.com/watch?v=ea2QyBEWLuo&list=PLMZMRynGmhsix2_xWKX6sp4rDr0E1tIQ_&index=37 36:25
 
-export default function ProdcutsPage(props) {
+export default function ProductsPage(props) {
   return (
     <div>
       <Layout>
@@ -48,7 +48,7 @@ export async function getServerSideProps() {
   console.log(arsenal);
   return {
     props: {
-      arsenalList: arsenal, // arsenalList is the name, arsenal is the value, therefore the database.js (the faked one); props is the object here and arsenalList the key and arsenal the value
+      arsenalList: arsenal, // arsenalList is the name/key, arsenal is the value, therefore the database.js (the faked one); props is the object here and arsenalList the key and arsenal the value
     },
   };
 }

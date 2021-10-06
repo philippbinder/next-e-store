@@ -47,7 +47,7 @@ export async function getServerSideProps(context) {
   });
   // 59:10 We want to loop over this array of users and find the users that have the same ID that I am passing into the URL
   // für micht user = product
-  // We want an object that has this characterstics that we want
+  // We want an object that has these characterstics that we want
 
   console.log(singleItem);
 
