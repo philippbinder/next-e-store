@@ -48,7 +48,7 @@ export async function getServerSideProps() {
   console.log(arsenal);
   return {
     props: {
-      arsenalList: arsenal, // arsenalList is the name/key, arsenal is the value, therefore the database.js (the faked one); props is the object here and arsenalList the key and arsenal the value
+      arsenalList: arsenal ? arsenal : null, // arsenalList is the name/key, arsenal is the value, therefore the database.js (the faked one); props is the object here and arsenalList the key and arsenal the value
     },
   };
 }

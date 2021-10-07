@@ -72,10 +72,10 @@ Password is the same
 // add .env to gitignore under # local env files!!!
 // same link at 1:08:30
 // dotenv is for enviroment variables
-export const arsenal = [
-  { id: '1', name: 'Gladius' },
-  { id: '2', name: 'Scutum' },
-];
+// export const arsenal = [
+//   { id: '1', name: 'Gladius' },
+//   { id: '2', name: 'Scutum' },
+// ];
 
 // Was war nochmal env und dotenv-safe?
 // Was macht Karl nun mit der sql const?
