@@ -56,8 +56,7 @@ export default function ProdcutsPage() {
             /> */}
             The Gladius is the trusted weapon of every legionary. Combined with
             the Scutum it makes for a deadly weapon, striking out at the
-            barbarians from the cover of the Scutum. They never see it coming.{' '}
-            <br />
+            barbarians from the cover of the Scutum. They never see it coming.
             If you find yourself cornered by some barbarian filth, you can also
             rely on your trusted Gladius, since it also makes for a good
             slashing weapon. Truly, roma invicta!

@@ -1,13 +1,65 @@
 // This will insert items into the table arsenal
 const arsenal = [
-  { number: 1, name: 'Gladius', type: 'Sword' },
-  { number: 2, name: 'Scutum', type: 'Shield' },
-  { number: 3, name: 'Pilum', type: 'Javelin' },
-  { number: 4, name: 'Aquila', type: 'Military Standard' },
-  { number: 5, name: 'Lorica Hamata', type: 'Armor' },
-  { number: 6, name: 'Lorica Segmentata', type: 'Armor' },
-  { number: 7, name: 'Galea Centurionis', type: 'Helmet' },
-  { number: 8, name: 'Title of Augustus', type: 'Position of Emperor' },
+  {
+    number: 1,
+    name: 'Gladius',
+    description:
+      // 'The Gladius is the trusted weapon of every legionary. Combined with the Scutum it makes for a deadly weapon, striking out at the barbarians from the cover of the Scutum. They never see it coming. If you find yourself cornered by some barbarian filth, you can also rely on your trusted Gladius, since it also makes for a good slashing weapon. Truly, roma invicta!',
+      '',
+    type: 'Sword',
+    image: '',
+  },
+  {
+    number: 2,
+    name: 'Scutum',
+    description: 'Test',
+    type: 'Shield',
+    image: '../public/images/scutum.png',
+    // 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Firongatearmory.com%2Fwp-content%2Fuploads%2F2011%2F04%2FAH3853L-Classical-Roman-Scutum.jpg&f=1&nofb=1',
+  },
+  { number: 3, name: 'Pilum', description: 'ss', type: 'Javelin', image: '' },
+  {
+    number: 4,
+    name: 'Aquila',
+    description: 'ss',
+    type: 'Military Standard',
+    image: '',
+  },
+  {
+    number: 5,
+    name: 'Lorica Hamata',
+    description: 'ss',
+    type: 'Armor',
+    image: '',
+  },
+  {
+    number: 6,
+    name: 'Lorica Segmentata',
+    description: 'ss',
+    type: 'Armor',
+    image: '',
+  },
+  {
+    number: 7,
+    name: 'Galea Centurionis',
+    description: 'ss',
+    type: 'Helmet',
+    image: '',
+  },
+  {
+    number: 8,
+    name: 'Title of Augustus',
+    description: 'aas',
+    type: 'Position of Emperor',
+    image: '',
+  },
+  {
+    number: 9,
+    name: 'adsadsad',
+    description: 'sssss',
+    type: 'aaaadasds',
+    image: '',
+  },
 ];
 
 exports.up = async function up(sql) {
@@ -19,9 +71,9 @@ exports.up = async function up(sql) {
     // Looping over the array and inserting each item
     await sql`
 			INSERT INTO arsenal
-				(number, name, type)
+				(number, name, type, description, image)
 			VALUES
-				(${item.number}, ${item.name}, ${item.type});
+				(${item.number}, ${item.name}, ${item.type}, ${item.description}, ${item.image});
 			-- RETURNING
 			--  number,
 			--  name,

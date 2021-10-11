@@ -18,17 +18,49 @@ https://github.com/upleveled/next-js-example-sep-2021/blob/master/README.md
 */
 
 // import fs from 'node:fs';
+
 import dotenvSafe from 'dotenv-safe';
 // dotenv for connecting to the database properly
+// this will get the environment variables from .env
 import postgres from 'postgres';
 
 // Read in the environment variables
 // in the .env file, making it possible
 // to connect to PostgreSQL
+// calls the function to get the .env Inhalt
+// https://www.npmjs.com/package/dotenv
 dotenvSafe.config(); // needs to be before postgres
 
 // Connect to PostgreSQL
 const sql = postgres();
+
+// Add a query to get all the items of the arsenal back
+// in order to get some information back from the databse we need to run a function first- we don't want to just export the data itself from this file, we want to export a function that gets the data
+// no parameters because I want all the items in the database, not just one
+// https://www.youtube.com/watch?v=aUduAiJTgcA&list=PLMZMRynGmhsix2_xWKX6sp4rDr0E1tIQ_&index=41 20:49
+export async function getArsenal() {
+  const arsenal = await sql`
+    SELECT * FROM arsenal;
+    `;
+  console.log('arsenal', arsenal);
+
+  return arsenal;
+}
+
+export async function getItem(id) {
+  const arsenal = await sql`
+    SELECT
+    *
+    FROM
+      arsenal
+    WHERE
+      id = ${id}
+  `;
+  const singleItem = arsenal[0];
+  // console.log('arsenal', arsenal);
+  console.log(singleItem);
+  return singleItem;
+}
 
 // console.log('filesystem', fs);
 // obere Zeilen mit fs enkommentieren wenn ich weiterarbeiten möchte
@@ -59,7 +91,7 @@ Password is the same
 // 2.
 // => update values, siehe unten
 // 3.
-// Set NOT NULL contraint
+// Set NOT NULL constraint
 // ALTER TABLE arsenal
 // ALTER COLUMN item_type SET NOT NULL;
 

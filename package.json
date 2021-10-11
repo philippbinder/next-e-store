@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/babel-plugin": "^11.3.0",
     "@emotion/react": "^11.4.1",
+    "cheerio": "^1.0.0-rc.10",
     "dotenv-cli": "^4.0.0",
     "dotenv-safe": "^8.2.0",
     "ley": "^0.7.1",

@@ -1,0 +1,26 @@
+Ich denke, dass index.js und [productID] nicht die databsae aus dem backend gepassed bekommen. Mit useRouter war das bei einer gefakten möglich, 
+aber ich scheine useRouter bei der echten database nicht adäquat ersetzt zu haben.
+
+
+export async function getUsers() {
+  const users = await sql`
+    SELECT * FROM users;
+  `;
+  return users.map((user) => {
+    // Convert the snake case favorite_color to favoriteColor
+    return camelcaseKeys(user);
+  });
+}
+
+src=database from upleveld
+Brauche ich auch so eine function die mir sql awaited und anschließend alle Elemente vom arsenal table auswählt und exportiert, nur ohne dem Part mit camelcaseKeys? 
+Falls ja, schreibe ich statt dem camelcaseKeys einfach nur return arsenal ?
+
+
+Und in [prodcutsId] 
+export async function getServerSideProps(context) {
+  // return { props: {} };
+  const { getUsers } = await import('../../util/database');
+
+  const users = await getUsers();
+?

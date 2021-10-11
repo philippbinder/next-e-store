@@ -44,11 +44,14 @@ export default function ProductsPage(props) {
 }
 
 export async function getServerSideProps() {
-  const { arsenal } = await import('../../util/database');
-  console.log(arsenal);
+  const { getArsenal } = await import('../../util/database');
+  // assign the table arsenal to a const
+  const arsenal = await getArsenal();
+
+  // console.log(arsenal);
   return {
     props: {
-      arsenalList: arsenal ? arsenal : null, // arsenalList is the name/key, arsenal is the value, therefore the database.js (the faked one); props is the object here and arsenalList the key and arsenal the value
+      arsenalList: arsenal, // arsenalList is the name/key, arsenal is the value, therefore the database.js (the faked one); props is the object here and arsenalList the key and arsenal the value
     },
   };
 }
