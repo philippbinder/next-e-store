@@ -41,7 +41,7 @@ export default function ProdcutTemplate(props) {
         >
           <Image
             // src={$(props.singleItem.image)}
-            src={props.singleItem.image}
+            src={`../public/${props.singleItem.id}`}
             alt="The Gladius, a legionaries trusted weapon."
           />
 

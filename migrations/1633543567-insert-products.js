@@ -3,63 +3,47 @@ const arsenal = [
   {
     number: 1,
     name: 'Gladius',
-    description:
-      // 'The Gladius is the trusted weapon of every legionary. Combined with the Scutum it makes for a deadly weapon, striking out at the barbarians from the cover of the Scutum. They never see it coming. If you find yourself cornered by some barbarian filth, you can also rely on your trusted Gladius, since it also makes for a good slashing weapon. Truly, roma invicta!',
-      '',
-    type: 'Sword',
-    image: '',
-  },
+    description: 'The Gladius. A legionaries trusted stabbing and slashing weapon.',
+    type: 'Sword', },
   {
     number: 2,
     name: 'Scutum',
     description: 'Test',
-    type: 'Shield',
-    image: '../public/images/scutum.png',
-    // 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Firongatearmory.com%2Fwp-content%2Fuploads%2F2011%2F04%2FAH3853L-Classical-Roman-Scutum.jpg&f=1&nofb=1',
-  },
-  { number: 3, name: 'Pilum', description: 'ss', type: 'Javelin', image: '' },
+    type: 'Shield', },
+  { number: 3,
+    name: 'Pilum',
+    description: 'ss',
+    type: 'Javelin', },
   {
     number: 4,
     name: 'Aquila',
     description: 'ss',
-    type: 'Military Standard',
-    image: '',
-  },
+    type: 'Military Standard', },
   {
     number: 5,
     name: 'Lorica Hamata',
     description: 'ss',
-    type: 'Armor',
-    image: '',
-  },
+    type: 'Armor', },
   {
     number: 6,
     name: 'Lorica Segmentata',
     description: 'ss',
-    type: 'Armor',
-    image: '',
-  },
+    type: 'Armor', },
   {
     number: 7,
     name: 'Galea Centurionis',
     description: 'ss',
-    type: 'Helmet',
-    image: '',
-  },
+    type: 'Helmet', },
   {
     number: 8,
     name: 'Title of Augustus',
     description: 'aas',
-    type: 'Position of Emperor',
-    image: '',
-  },
+    type: 'Position of Emperor', },
   {
     number: 9,
     name: 'adsadsad',
     description: 'sssss',
-    type: 'aaaadasds',
-    image: '',
-  },
+    type: 'aaaadasds', },
 ];
 
 exports.up = async function up(sql) {
@@ -71,9 +55,11 @@ exports.up = async function up(sql) {
     // Looping over the array and inserting each item
     await sql`
 			INSERT INTO arsenal
-				(number, name, type, description, image)
+				(number, name, type, description)
+        -- image
 			VALUES
-				(${item.number}, ${item.name}, ${item.type}, ${item.description}, ${item.image});
+				(${item.number}, ${item.name}, ${item.type}, ${item.description});
+        -- ${item.image}
 			-- RETURNING
 			--  number,
 			--  name,
@@ -108,7 +94,7 @@ exports.down = async function down(sql) {
 			DELETE FROM
 				arsenal
 			WHERE
-				name = ${item.number} AND name = ${item.name} AND type = ${item.type};
+				name = ${item.number} AND name = ${item.name} AND type = ${item.type} AND description = ${item.description};
 				`;
   }
 

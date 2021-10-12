@@ -7,7 +7,7 @@ exports.up = async function up(sql) {
 			number INTEGER NOT NULL,
 			name VARCHAR(40) NOT NULL,
 			description VARCHAR,
-			image BYTEA,
+			-- image BYTEA,
 			type VARCHAR(40) NOT NULL
 		);
 	`;
