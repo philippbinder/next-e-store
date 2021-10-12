@@ -4,9 +4,9 @@ const arsenal = [
     // number: 1,
     name: 'Gladius',
     description:
-      'The Gladius. A legionaries trusted stabbing and slashing weapon. Said to be moddled after the celtic swords and adopted and perfected for roman purposes. Kept short to hide it behind the Scutum to make it impossible for the enemy to see at which heigth attack was coming from.',
+      'The Gladius. A legionaries trusted stabbing and slashing weapon. Said to be moddled after the celtic swords and adopted and perfected for roman purposes. Kept short to hide it behind the Scutum to make it impossible for the enemy to see at which heigth and angle the attack is coming from.',
     type: 'Sword',
-    price: 1500,
+    price: 2000,
   },
   {
     // number: 2,
@@ -14,7 +14,7 @@ const arsenal = [
     description:
       'The Scutum was a huge shield made out of wood and glued together to achieve a curved shape. It was so large, that it could almost shield an entire legionary when he had his sword drawn and protect him from close range attacks and projectiles like arrows or stones. It also enabled the famous Testudo. A formation that made the roman cohort nearly invincible to projectiles and also offered good protection against cavalry charges, all the while while the legionaries continued to advance on the enemy lines.',
     type: 'Shield',
-    price: 500,
+    price: 800,
   },
   {
     // number: 3,
@@ -27,7 +27,7 @@ const arsenal = [
   {
     // number: 4,
     name: 'Aquila',
-    description: `The pride of every legion, it's military standard, it's own roman eagle, the Aquila. The soldier who carried was the so called Aquilifer (the eagle barrier) and was respected by his fellow soldiers in the legion. The Aquilifer was a highly respected position within in the legion and therefore exempted from menial tasks like building roads or digging the latrine.
+    description: `The pride of every legion, it's military standard, it's own roman eagle, the Aquila. The soldier who carried it was the so called Aquilifer (the eagle barrier) and was respected by his fellow soldiers in the legion. The Aquilifer was a highly esteemed position within in the legion and therefore exempted from menial tasks like building roads or digging out and cleaning the latrine.
     The loss of it's eagle was a devestating blow for each legion and (a political) reason to strike back at the enemy to retrieve it and restore Romes glory. `,
     type: 'Military standard',
     price: 50000,
@@ -36,21 +36,22 @@ const arsenal = [
     // number: 5,
     name: 'Lorica Hamata',
     description:
-      'The Lorica Hamata was used for six centuries and was a mail armor made by interlocking metal rings. While not as good as the more expensive Lorica Hamata in terms of protection, it was more affordable and you could put it on much faster than the Lorica Segmentata.',
+      'The Lorica Hamata was used for six centuries and was a mail armor made by interlocking metal rings. While not as good as the more expensive Lorica Segmentata in terms of protection, it was more affordable and you could put it on much faster than the Lorica Segmentata.',
     type: 'Armor',
     price: 2000,
   },
   {
     // number: 6,
     name: 'Lorica Segmentata',
-    description: `The famous and iconic Lorica Segmentata was the pinnacle of ancient world body armor. Made out of metal strips that were layered above each other and within each other. It was much more expensive than the Lorica Hamata and used only for 300 to 400 years. It also took around 40 minutes to put on and became a liability in it's later years of usage due to many and quick raiding attacks by romes enemies. Nonetheless, once equipped, nothing could compare to it in it's time and most slashing or stabbing weapons could penetrate this armor. A stabbing attack with a blade could only be successful if it aligned at right angles and slipped through a gap bewteen two stripes.`,
+    description: `The famous and iconic Lorica Segmentata was the pinnacle of ancient world body armor. Made out of metal strips that were layered above each other and within each other. It was much more expensive than the Lorica Hamata and used only for 300 to 400 years. It also took around 40 minutes to put on and became a liability in it's later years of usage due to many and quick raiding attacks by Romes enemies. Nonetheless, once equipped, nothing could compare to it in it's time and most slashing or stabbing weapons could'nt penetrate this armor. A stabbing attack with a sword could only be successful if it aligned at right angles and slipped through a gap bewteen two stripes.`,
     type: 'Armor',
     price: 8000,
   },
   {
     // number: 7,
     name: 'Galea Centurionis',
-    description: `The classic helemet of a Centurion, a field officer to lead his centurion (100 men, later 80 men) and enforce discipline and respect. These men lead their soldiers from the frontline and wore helemts that made them easily distinguishable from a regular soldier.There was a saying in the roman legions that the soldiers wouldn't run from the enemy if they feared the man behind them more than the men infront of them. A strategy that seems to have worked, sicne the Roman Army was known as the most disciplined in it's time. Even going so far as executing every tenth man of their own army if discipline failed on the battlefield.`,
+    description: `The classic helemet of a Centurion, a field officer to lead his centurion (100 men, later 80 men) and enforce discipline and respect. These men lead their soldiers from the frontline and wore helemts that made them easily distinguishable from a regular soldier. There was a saying in the roman legions that the soldiers wouldn't run from the enemy if they feared the man behind them more than the men infront of them.
+    A strategy that seems to have worked out, since the Roman Army was known as the most disciplined in it's time. Even going so far as executing every tenth man of their own army if discipline failed on the battlefield.`,
     type: 'Helmet',
     price: 1000,
   },
@@ -66,9 +67,9 @@ const arsenal = [
     // number: 9,
     name: 'Title of Augustus',
     description:
-      'Special offer from our friends from the Preatoriani - the Praetorian Guard. Become emperor yourself and reign over the Roman Empire! High donations to the Praetorian Guard are expected and if not granted, may result in an early death. Bribe today and reign tomorrow!',
+      'Special offer from our friends from the Preatoriani - the Praetorian Guard. Become emperor yourself and reign over the Roman Empire! Large post-purchase donations to the Praetorian Guard are expected and, if not granted, could result in premature death. Bribe today and reign tomorrow! (Was sold for approximately 2.207.792.207.8 denarii).',
     type: 'Position of Emperor',
-    price: 1000000,
+    price: 100000000,
   },
 ];
 

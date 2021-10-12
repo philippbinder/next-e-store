@@ -20,7 +20,7 @@ export default function Home() {
           `}
         >
           {' '}
-          Welcome to the landing page of the Ferrarius Evocatorum.
+          Welcome to the landing page of the Ferrarius Legionis.
         </h1>
         <div
           css={css`

@@ -42,7 +42,7 @@ export default function ProdcutTemplate(props) {
           <Image
             // src={`/../../public/images/${props.singleItem.id}.png`}
             src={`/images/${props.singleItem.id}.png`}
-            alt="The Gladius, a legionaries trusted weapon."
+            alt="Some roman item."
             // css={css`
             //   width: 200px;
             //   height: 400px;
@@ -60,7 +60,7 @@ export default function ProdcutTemplate(props) {
               overflow: auto;
             `}
           >
-            Your are looking at the glorious {props.singleItem.name}, plebeian.
+            You are looking at the glorious {props.singleItem.name}, plebeian.
             <br />
             <br />
             {props.singleItem.description} <br />
