@@ -3,47 +3,53 @@ const arsenal = [
   {
     number: 1,
     name: 'Gladius',
-    description: 'The Gladius. A legionaries trusted stabbing and slashing weapon.',
-    type: 'Sword', },
+    description:
+      'The Gladius. A legionaries trusted stabbing and slashing weapon.',
+    type: 'Sword',
+  },
   {
     number: 2,
     name: 'Scutum',
     description: 'Test',
-    type: 'Shield', },
-  { number: 3,
-    name: 'Pilum',
-    description: 'ss',
-    type: 'Javelin', },
+    type: 'Shield',
+  },
+  { number: 3, name: 'Pilum', description: 'ss', type: 'Javelin' },
   {
     number: 4,
     name: 'Aquila',
     description: 'ss',
-    type: 'Military Standard', },
+    type: 'Military Standard',
+  },
   {
     number: 5,
     name: 'Lorica Hamata',
     description: 'ss',
-    type: 'Armor', },
+    type: 'Armor',
+  },
   {
     number: 6,
     name: 'Lorica Segmentata',
     description: 'ss',
-    type: 'Armor', },
+    type: 'Armor',
+  },
   {
     number: 7,
     name: 'Galea Centurionis',
     description: 'ss',
-    type: 'Helmet', },
+    type: 'Helmet',
+  },
   {
     number: 8,
     name: 'Title of Augustus',
     description: 'aas',
-    type: 'Position of Emperor', },
+    type: 'Position of Emperor',
+  },
   {
     number: 9,
     name: 'adsadsad',
     description: 'sssss',
-    type: 'aaaadasds', },
+    type: 'aaaadasds',
+  },
 ];
 
 exports.up = async function up(sql) {
@@ -56,10 +62,8 @@ exports.up = async function up(sql) {
     await sql`
 			INSERT INTO arsenal
 				(number, name, type, description)
-        -- image
 			VALUES
 				(${item.number}, ${item.name}, ${item.type}, ${item.description});
-        -- ${item.image}
 			-- RETURNING
 			--  number,
 			--  name,

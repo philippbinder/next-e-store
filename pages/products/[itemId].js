@@ -40,11 +40,17 @@ export default function ProdcutTemplate(props) {
           `}
         >
           <Image
-            // src={$(props.singleItem.image)}
-            src={`../public/${props.singleItem.id}`}
+            // src={`/../../public/images/${props.singleItem.id}.png`}
+            src={`/images/${props.singleItem.id}.png`}
             alt="The Gladius, a legionaries trusted weapon."
+            // css={css`
+            //   width: 200px;
+            //   height: 400px;
+            //   object-fit: contain;
+            // `}
+            height={700}
+            width={500}
           />
-
           <div
             css={css`
               text-align: left;
@@ -54,13 +60,6 @@ export default function ProdcutTemplate(props) {
               overflow: auto;
             `}
           >
-            {/* <Image
-              src={spqr}
-              alt="SPQR eagle"
-              css={css`
-                object-fit: contain;
-              `}
-            /> */}
             Your are looking at the glorious {props.singleItem.name}, plebeian.
             <br />
             <br />
