@@ -65,12 +65,9 @@ export default function ProdcutTemplate(props) {
             <br />
             {props.singleItem.description} <br />
             <br />
+            Price: <i> {props.singleItem.price} denarii </i>
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            Price: <i> Import item price </i>
           </div>
         </div>
         <div
