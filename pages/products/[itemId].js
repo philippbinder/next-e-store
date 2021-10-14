@@ -6,14 +6,14 @@ import { useState } from 'react';
 // import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 
+// Cookies: https://www.youtube.com/watch?v=w8n7Soz7khw
+
 // useRouter hier und nicht in index.js, weil diese template Seite ja die Seite sein soll, wo per default bei jedem beliebigen Namen nach products/ hinverlinkt wird.
 
-// TEST 5
-
 // faked AddToCart
-function AddToCart() {
-  console.log('added.');
-}
+// function AddToCart() {
+//   console.log('added.');
+// }
 
 export default function ProdcutTemplate(props) {
   const image = props.singleItem.image;
@@ -31,7 +31,7 @@ export default function ProdcutTemplate(props) {
   if (counter <= 0) {
     decrementCounter = () => setCounter(0);
   }
-  const passToCartCookies = counter;
+  // const passToCartCookies = counter;
   return (
     <div>
       <Layout>
@@ -106,7 +106,7 @@ export default function ProdcutTemplate(props) {
               `}
             >
               {' '}
-              -1{' '}
+              Too much epicness!{' '}
             </button>
             <input
               type="number"
@@ -132,24 +132,50 @@ export default function ProdcutTemplate(props) {
               `}
             >
               {' '}
-              +1{' '}
+              Gimme MORE!{' '}
             </button>
           </div>
+          <div>
+            <button
+              type="button"
+              onClick={() => {
+                Cookies.set(
+                  `${props.singleItem.name}`,
+                  `${counter}`,
+                  `${props.singleItem.price}`,
+                  {
+                    expires: 1 / 24,
+                  },
+                );
+              }}
+              css={css`
+                height: 6vh;
+                width: 12vw;
+                /* font-size: 80%; */
+                overflow: hidden;
+              `}
+            >
+              Smash into cart!
+            </button>
 
-          <button
-            type="button"
-            onClick={() => {
-              Cookies.set('orderedItems', 10, { expires: 1 / 24 });
-            }}
-            css={css`
-              height: 6vh;
-              width: 12vw;
-              /* font-size: 80%; */
-              overflow: hidden;
-            `}
-          >
-            Add to cart.
-          </button>
+            <button
+              type="button"
+              onClick={() => {
+                Cookies.remove(
+                  `${props.singleItem.name}`,
+                  `${props.singleItem.price}`,
+                );
+              }}
+              css={css`
+                height: 6vh;
+                width: 12vw;
+                /* font-size: 80%; */
+                overflow: hidden;
+              `}
+            >
+              Exterminate from cart!
+            </button>
+          </div>
         </div>
       </Layout>
     </div>
@@ -181,6 +207,7 @@ export default function ProdcutTemplate(props) {
 
 export async function getServerSideProps(context) {
   const { getItem } = await import('../../util/database');
+  // console.log(context.req.cookies.orderedQuantity);
 
   const item = await getItem(context.query.itemId);
   // itemId has to be same name as the [] file in the prodcuts folder
@@ -210,6 +237,8 @@ export async function getServerSideProps(context) {
       singleItem: item,
       // will be passed to the page component as props
       // arsenalList: arsenal,  arsenalList is the name, arsenal is the value, therefore the database.js (the faked one); props is the object here and arsenalList the key and arsenal the value
+      // orderedQuantity: context.req.cookies.`${props.singleItem.name}`,
+      // should be used for displaying the selected amount, doesn't work, maybe due to props being passed in the (main) function and not "orederedQuantity"?
     },
   };
 }

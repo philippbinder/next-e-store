@@ -2,8 +2,6 @@ import { css } from '@emotion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
-import pilum from '../public/images/pilum.png';
-import scutum from '../public/images/scutum.png';
 
 // function ToCheckout() {
 //   <Link href="../checkout" />;
@@ -44,10 +42,6 @@ export default function CartPage() {
               grid-template-columns: 30% 50%;
             `}
           >
-            <Image
-              src={scutum}
-              alt="The shield that was as much protection as it was a weapon in itself."
-            />
             <span> Price: {priceScutum} </span>
           </div>
           <div
@@ -60,16 +54,6 @@ export default function CartPage() {
               grid-template-columns: 30% 50%;
             `}
           >
-            <Image
-              src={pilum}
-              alt="The shield that was as much protection as it was a weapon itself."
-              css={css`
-                max-height: 1vh;
-                position: relative;
-                margin-left: 1000px;
-                size: 100% 100%;
-              `}
-            />
             <span> Price: {pricePilum} </span>
           </div>
           <div
