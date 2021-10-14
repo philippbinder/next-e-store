@@ -8,6 +8,8 @@ import Layout from '../../components/Layout';
 
 // useRouter hier und nicht in index.js, weil diese template Seite ja die Seite sein soll, wo per default bei jedem beliebigen Namen nach products/ hinverlinkt wird.
 
+// TEST
+
 // faked AddToCart
 function AddToCart() {
   console.log('added.');
