@@ -1,6 +1,8 @@
 import { css } from '@emotion/react';
+import Cookies from 'js-cookie';
 // import * as cheerio from 'cheerio';
 import Image from 'next/image';
+import { useState } from 'react';
 // import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 
@@ -16,6 +18,18 @@ export default function ProdcutTemplate(props) {
   console.log(image);
   // const $ = cheerio.load(image);
 
+  // https://www.tutorialfunda.com/reactjs/increment-decrement-number-using-react-hooks-counter/
+  // https://stackoverflow.com/questions/67855726/increment-and-decrement-button-function-in-next-js-typescript
+  // to let user increase and decrease the number of the item - let variable because I will change it if number < 0
+  const [counter, setCounter] = useState(0);
+  const incrementCounter = () => setCounter(counter + 1);
+  let decrementCounter = () => setCounter(counter - 1);
+
+  // this makes it that once the user goes under 0 the function will be rewritten to set it to 0 once called by the user
+  if (counter <= 0) {
+    decrementCounter = () => setCounter(0);
+  }
+  const passToCartCookies = counter;
   return (
     <div>
       <Layout>
@@ -77,8 +91,54 @@ export default function ProdcutTemplate(props) {
             margin-top: 5vh;
           `}
         >
+          <div>
+            <button
+              onClick={decrementCounter}
+              css={css`
+                background-color: white;
+                color: black;
+                border-top: 3px solid darkred;
+                border-bottom: 3px solid darkred;
+                border-left: 3px solid darkred;
+                border-right: 1.5px solid black;
+              `}
+            >
+              {' '}
+              -1{' '}
+            </button>
+            <input
+              type="number"
+              css={css`
+                background-color: white;
+                color: black;
+                border-top: 3px solid darkred;
+                border-bottom: 3px solid darkred;
+                border-left: 1.5px solid black;
+                border-right: 1.5px solid black;
+              `}
+              value={counter}
+            />
+            <button
+              onClick={incrementCounter}
+              css={css`
+                background-color: white;
+                color: black;
+                border-top: 3px solid darkred;
+                border-bottom: 3px solid darkred;
+                border-left: 1.5px solid black;
+                border-right: 3px solid darkred;
+              `}
+            >
+              {' '}
+              +1{' '}
+            </button>
+          </div>
+
           <button
-            onClick={AddToCart}
+            type="button"
+            onClick={() => {
+              Cookies.set('orderedItems', 10, { expires: 1 / 24 });
+            }}
             css={css`
               height: 6vh;
               width: 12vw;
