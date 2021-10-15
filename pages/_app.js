@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
         `}
       />
       <Head>
-        <title>Blacksmith of the Evocati</title>
+        <title>Blacksmith of the Legion</title>
       </Head>
       <Component {...pageProps} />
     </>

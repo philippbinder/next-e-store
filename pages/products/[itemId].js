@@ -6,6 +6,8 @@ import { useState } from 'react';
 // import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 
+export let cookiesArray;
+
 // Cookies: https://www.youtube.com/watch?v=w8n7Soz7khw
 
 // useRouter hier und nicht in index.js, weil diese template Seite ja die Seite sein soll, wo per default bei jedem beliebigen Namen nach products/ hinverlinkt wird.
@@ -139,8 +141,26 @@ export default function ProdcutTemplate(props) {
             <button
               type="button"
               onClick={() => {
+                Cookies.remove(
+                  `${props.singleItem.id}`,
+                  `${props.singleItem.price}`,
+                );
+              }}
+              css={css`
+                height: 6vh;
+                width: 12vw;
+                /* font-size: 80%; */
+                overflow: hidden;
+              `}
+            >
+              Kick out of cart!
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
                 Cookies.set(
-                  `${props.singleItem.name}`,
+                  `${props.singleItem.id}`,
                   `${counter}`,
                   `${props.singleItem.price}`,
                   {
@@ -156,24 +176,6 @@ export default function ProdcutTemplate(props) {
               `}
             >
               Smash into cart!
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
-                Cookies.remove(
-                  `${props.singleItem.name}`,
-                  `${props.singleItem.price}`,
-                );
-              }}
-              css={css`
-                height: 6vh;
-                width: 12vw;
-                /* font-size: 80%; */
-                overflow: hidden;
-              `}
-            >
-              Exterminate from cart!
             </button>
           </div>
         </div>
@@ -214,7 +216,15 @@ export async function getServerSideProps(context) {
   console.log(context.query.itemId);
   // loads the current selected item, is a unique identifier
   // is the syntax, if query.productId : product is the name of the file, look at 48:35 of https://www.youtube.com/watch?v=ea2QyBEWLuo&list=PLMZMRynGmhsix2_xWKX6sp4rDr0E1tIQ_&index=38 ; with query.id : it pulls the id of the exact object that I want gathered by the function 51:35
-  console.log(item);
+  // console.log(context.req.cookies);
+  // for (const [key, value] of Object.entries(context.req.cookies)) {
+  //   console.log(`${key}: ${value}`);
+  // }
+  let cookiesArray = Object.entries(context.req.cookies);
+  console.log(cookiesArray);
+  // object.keys
+  // object.values
+  // object.entries    differences, could one of that be the on I need - they trasnform objects into arraysin different arrayss
 
   // const idFromUrl = context.query.itemId; // for example '2'
   // // 33:00
@@ -239,6 +249,9 @@ export async function getServerSideProps(context) {
       // arsenalList: arsenal,  arsenalList is the name, arsenal is the value, therefore the database.js (the faked one); props is the object here and arsenalList the key and arsenal the value
       // orderedQuantity: context.req.cookies.`${props.singleItem.name}`,
       // should be used for displaying the selected amount, doesn't work, maybe due to props being passed in the (main) function and not "orederedQuantity"?
+      // object.keys
+      // object.values
+      // object.entries    differences, could one of that be the on I need - they trasnform objects into arraysin different arrayss
     },
   };
 }
