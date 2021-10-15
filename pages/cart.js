@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 
+// Ad cookies: Idea: create a cookie array, map over it and return the total price by multiplying its's frist value (the quantity) with the second (it's price). Stringify two key-value pairs to save them in one cookie (cookies only save one key-value pair) and then decode them (parse?) on the cart page to perform said actions?
+
 // function ToCheckout() {
 //   <Link href="../checkout" />;
 // }
