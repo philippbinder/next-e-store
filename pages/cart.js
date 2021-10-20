@@ -1,8 +1,13 @@
 import { css } from '@emotion/react';
+import Cookies from 'js-cookie';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
-import cookiesArray from './products/[itemId].js';
+import { getItem } from '../util/database';
+
+// import cookiesArray from './products/[itemId].js';
+
+// WONT work, I have to import the data from the cookies, not from a variable from another side
 
 // Ad cookies: Idea: create a cookie array, map over it and return the total price by multiplying its's frist value (the quantity) with the second (it's price). Stringify two key-value pairs to save them in one cookie (cookies only save one key-value pair) and then decode them (parse?) on the cart page to perform said actions?
 // Nächsten Schritte: Cookies als String mit Info??? Als Array?? Function die cookies aufruft und checkt ob die ID / das Produkt valid ist und anschließend den Gesamtpreis ausrechnet
@@ -29,7 +34,6 @@ console.log(priceTotal);
 // }
 
 export default function CartPage() {
-  console.log(cookiesArray);
   return (
     <Layout>
       <div>
@@ -106,14 +110,45 @@ export default function CartPage() {
     </Layout>
   );
 }
-// export async function getServerSideProps(context) {
-//   const cookiesArray = Object.entries(context.req.cookies);
-//   console.log(cookiesArray);
 
-//   return {
-//     props: { singleItem: item },
-//   };
-// }
+export async function getServerSideProps(context) {
+  // const cartCookies = Cookies.get(context.req.cookies) || [];
+  // console.log(cartCookies);
+  // console.log(Cookies.get());
+  // const cartCookies = Cookies.get();
+  // const cartCookies = Cookies.get();
+  let cookiesArray = Object.entries(context.req.cookies);
+  // https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/keys
+  // const iterator = cookiesArray.keys();
+  // for (const key of iterator) {
+  //   console.log(key);
+  // }
+  // console.log(cookiesArray.keys);
+
+  for (
+    let cookiesArrayElement = 0;
+    cookiesArrayElement < cookiesArray.length;
+    cookiesArrayElement++
+  ) {
+    const currentElement = cookiesArray[`${cookiesArrayElement}`];
+    console.log(currentElement);
+    const currentElementID = currentElement[0]; // gets the ID from the item
+    console.log(currentElementID);
+    let dbCurrentElement = await getItem(currentElementID); // should access the database for the product with the current ID
+    // console.log(dbCurrentElement);
+    // props.singleItem.name
+  }
+  return {
+    // props: { gimmeCookies: cartCookies },
+    props: { gimmeCookies: cookiesArray },
+  };
+  // const cookiesArray = Object.entries(context.req.cookies);
+  // console.log(cookiesArray);
+
+  // return {
+  //   props: { singleItem: item },
+  // };
+}
 
 /*
 To do

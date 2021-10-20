@@ -143,7 +143,7 @@ export default function ProdcutTemplate(props) {
               onClick={() => {
                 Cookies.remove(
                   `${props.singleItem.id}`,
-                  `${props.singleItem.price}`,
+                  // `${props.singleItem.price}`,
                 );
               }}
               css={css`
@@ -162,9 +162,9 @@ export default function ProdcutTemplate(props) {
                 Cookies.set(
                   `${props.singleItem.id}`,
                   `${counter}`,
-                  `${props.singleItem.price}`,
+                  // `${props.singleItem.price}`,
                   {
-                    expires: 1 / 24,
+                    expires: 1,
                   },
                 );
               }}
@@ -221,7 +221,10 @@ export async function getServerSideProps(context) {
   //   console.log(`${key}: ${value}`);
   // }
   let cookiesArray = Object.entries(context.req.cookies);
-  console.log(cookiesArray);
+  // const cookiesArray = JSON.parse(context.req.cookies);
+  // console.log(cookiesArray);
+  // console.log(cookiesArray.keys());
+  // console.log(JSON.parse(cookiesArray));
   // object.keys
   // object.values
   // object.entries    differences, could one of that be the on I need - they trasnform objects into arraysin different arrayss
