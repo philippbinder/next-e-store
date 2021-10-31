@@ -1,3 +1,4 @@
+// default ley code has to be changed
 // This will create the table
 exports.up = async function up(sql) {
   console.log('Creating arsenal table...');
