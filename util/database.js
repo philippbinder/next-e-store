@@ -47,6 +47,7 @@ export async function getArsenal() {
   return arsenal;
 }
 
+// could the const arsenal have any name, if so, it's only a placeholder name
 export async function getItem(id) {
   const arsenal = await sql`
     SELECT
